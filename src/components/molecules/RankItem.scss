@@ -1,0 +1,25 @@
+/* RankItem.scss */
+.rank-item {
+  width: 200px;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  background: var(--color-bg-section);
+  border-radius: 12px;
+  
+  text-align: center;
+
+  span {
+    font-size: 0.9rem;
+    display: block;
+    padding: .5rem 0rem;
+    color: var(--color-text-theme);
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
+  }
+}

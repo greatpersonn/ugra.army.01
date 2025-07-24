@@ -1,0 +1,54 @@
+// src/components/atoms/ThemeToggle.scss
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  .slider {
+    width: 40px;
+    height: 20px;
+    background-color: #666;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.3s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #fff;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  input:checked+.slider {
+    background-color: var(--color-accent);
+
+    &::before {
+      transform: translateX(20px);
+    }
+  }
+
+  .label-text {
+    color: var(--color-text);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+}

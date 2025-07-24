@@ -1,0 +1,22 @@
+.rank-groups {
+    padding: 1rem 0rem;
+    span.rank-header {
+        padding: .8rem 0rem;
+        font-size: 3rem;
+    }
+}
+
+.rank-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    span.rank-name {
+        color: var(--color-text-theme);
+        display: block;
+        padding: .8rem 0rem;
+        font-size: 1.5rem;
+    }
+}

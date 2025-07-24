@@ -1,0 +1,39 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  .gallery-title {
+    font-size: 3rem;
+    display: block;
+    padding: 2rem 0rem;
+  }
+
+  .photo-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+  }
+
+  .video-grid {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    iframe {
+      padding: 1rem;
+      width: 80%;
+      max-width: 640px;
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+}

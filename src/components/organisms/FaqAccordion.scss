@@ -1,0 +1,74 @@
+.faq {
+  width: 100%;
+  max-width: 1200px;
+  max-height: 800px;
+  margin: 0 auto;
+}
+
+.faq h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.faq-list {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+
+  &:nth-child(1) {
+    border-top: 1px solid var(--color-hr-line);
+    box-sizing: border-box;
+  }
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-hr-line);
+  box-sizing: border-box;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    font-size: 1.3rem;
+    font-family: 'e-Ukraine', sans-serif !important;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0rem 0rem 0rem 1.2rem;
+  color: var(--color-sub-text);
+  font-size: 1rem;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  width: 700px;
+
+  span {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
+}
+
+.faq-answer.open {
+  padding: 0rem 1.2rem 1.5rem;
+  max-height: 500px;
+}

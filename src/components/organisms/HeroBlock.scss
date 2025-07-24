@@ -1,0 +1,61 @@
+/* HeroBlock.scss */
+.hero-block {
+  text-align: center;
+  padding: 1rem;
+
+  span {
+    display: block;
+
+    &:nth-child(1) {
+      color: var(--color-head-text);
+      font-size: 4rem;
+    }
+
+    &:nth-child(2) {
+      color: var(--color-sub-text);
+      font-size: 1.1rem;
+      padding: .5rem 0rem;
+    }
+
+    &:nth-child(3) {
+      color: var(--color-sub-text);
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  .buttons {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    button {
+      padding: 1rem 2rem;
+      border: none;
+      outline: none;
+
+      background-color: var(--color-bg-button);
+      border-radius: 12px;
+      
+      color: var(--color-text-theme);
+      font-family: 'e-Ukraine', sans-serif !important;
+      font-size: 1.2rem;
+      
+      transition: background-color 0.3s ease-in-out;
+      
+      &:hover {
+        cursor: pointer;
+        background-color: var(--color-bg-button-hover);
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+      }
+    }
+  }
+}

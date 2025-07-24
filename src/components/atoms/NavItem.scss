@@ -1,0 +1,42 @@
+// src/components/atoms/NavItem.scss
+
+.nav-item {
+  position: relative;
+  background: none;
+  border: none;
+
+  font-family: 'e-Ukraine', sans-serif;
+  font-size: 1rem;
+  color: var(--color-text);
+  
+  cursor: pointer;
+
+  padding: 0.3rem 0;
+  transition: color 0.3s ease;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 0%;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
