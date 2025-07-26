@@ -24,7 +24,7 @@ const photos = [
   },
   {
     src: require('../../assets/images/gallery6.png'),
-    title: 'Оператор ППО варті неба над ВЧ',
+    title: 'Оператор ППО на варті неба над ВЧ',
   },
   {
     src: require('../../assets/images/gallery7.png'),

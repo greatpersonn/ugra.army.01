@@ -7,6 +7,7 @@ import HeroBlock from '../components/organisms/HeroBlock';
 import TasksGrid from '../components/organisms/TaskGrid';
 import RankGroups from '../components/organisms/RankGroup';
 import GallerySection from '../components/organisms/GallerySection';
+import LeadershipHistorySection from '../components/organisms/LeadershipHistorySection';
 
 const faqItems = [
   {
@@ -177,4 +178,10 @@ export const SECTION_CONTENT = {
       <GallerySection />
     </>
   ),
+
+  history: (
+    <>
+      <LeadershipHistorySection />
+    </>
+  )
 };

@@ -31,4 +31,7 @@ export default defineConfig({
       'twitter:description': 'Всі важливі відповіді щодо служби, підрозділів та вступу до армії'
     }
   },
+  output: {
+    assetPrefix: '/ugra.army.01/',
+  }
 });

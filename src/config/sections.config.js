@@ -6,4 +6,5 @@ export const SECTIONS = [
   { id: 'units', label: 'Підрозділи', enabled: true },
   { id: 'ranks', label: 'Військові звання', enabled: true },
   { id: 'gallery', label: 'Галерея', enabled: true },
+  { id: 'history', label: 'Історія керівництва', enabled: true },
 ];
