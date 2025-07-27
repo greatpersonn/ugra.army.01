@@ -38,6 +38,22 @@ const photos = [
     src: require('../../assets/images/gallery9.png'),
     title: 'Водій-механік та БТР-4 "Буцефал"',
   },
+  {
+    src: require('../../assets/images/gallery10.png'),
+    title: 'Робота пари МіГ-29 по ворожим об`єктам',
+  },
+  {
+    src: require('../../assets/images/gallery11.png'),
+    title: 'Захист повітряного простору над ВЧ',
+  },
+  {
+    src: require('../../assets/images/gallery12.png'),
+    title: 'Нагородження особового складу Президентом України',
+  },
+  {
+    src: require('../../assets/images/gallery13.png'),
+    title: 'Виїзд на тренування БТР-3',
+  },
 ];
 
 const GallerySection = () => (
