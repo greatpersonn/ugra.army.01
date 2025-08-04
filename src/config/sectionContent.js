@@ -126,7 +126,7 @@ export const SECTION_CONTENT = {
             <span>
               Основне завдання: збір, обробка й передача воєнної розвідінформації.
             </span>
-            <span><strong>Керівник:</strong> Віктор Городиський</span>
+            <span><strong>Керівник:</strong> Вакант</span>
           </div>
         </div>
 
@@ -143,7 +143,7 @@ export const SECTION_CONTENT = {
             <span>
               Основне завдання: забезпечення правопорядку, жандармські функції, військова юстиція.
             </span>
-            <span><strong>Керівник:</strong> Назар Полторацький</span>
+            <span><strong>Керівник:</strong> Вакант</span>
           </div>
         </div>
 
