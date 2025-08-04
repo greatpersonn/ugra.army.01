@@ -30,7 +30,7 @@ const leadershipStructure = [
         rank: 'Полковник ЗСУ',
         role: 'Керує рекрутингом і підготовкою бійців ССО.',
         head: 'Куратор підрозділів: Сили спеціальних операцій.',
-        avatar: require('../../assets/images/colonel.png'),
+        avatar: require('../../assets/images/major-fm.png'),
       },
       {
         name: 'Назар Полторацький',
