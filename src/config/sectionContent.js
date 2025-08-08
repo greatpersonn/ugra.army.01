@@ -109,7 +109,7 @@ export const SECTION_CONTENT = {
             <span>
               Основне завдання: розвідка, диверсії, контрдиверсійна боротьба, психологічні операції.
             </span>
-            <span><strong>Керівник:</strong> Микола Шевчук</span>
+            <span><strong>Керівник:</strong> Вакант</span>
           </div>
         </div>
 
@@ -126,7 +126,7 @@ export const SECTION_CONTENT = {
             <span>
               Основне завдання: збір, обробка й передача воєнної розвідінформації.
             </span>
-            <span><strong>Керівник:</strong> Вакант</span>
+            <span><strong>Керівник:</strong> Надія Уайт</span>
           </div>
         </div>
 
@@ -143,7 +143,7 @@ export const SECTION_CONTENT = {
             <span>
               Основне завдання: забезпечення правопорядку, жандармські функції, військова юстиція.
             </span>
-            <span><strong>Керівник:</strong> Вакант</span>
+            <span><strong>Керівник:</strong> Микола Долар</span>
           </div>
         </div>
 
