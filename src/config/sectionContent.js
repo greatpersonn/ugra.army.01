@@ -109,7 +109,7 @@ export const SECTION_CONTENT = {
             <span>
               Основне завдання: розвідка, диверсії, контрдиверсійна боротьба, психологічні операції.
             </span>
-            <span><strong>Керівник:</strong> Ігор Сисоєв</span>
+            <span><strong>Керівник:</strong> Ігор Хлібороб</span>
           </div>
         </div>
 
