@@ -1,142 +1,41 @@
-// components/organisms/LeadershipHistorySection.jsx
-import { BsPatchQuestion } from "react-icons/bs";
-import './LeadershipHistorySection.scss';
+import { useEffect, useState } from "react";
+import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
+import { db } from "../../db/firebaseConnection";
 
-const leadershipFacts = [
-  'ЗСУ є однією з найбільш досвідчених армій Європи з бойовим досвідом з 2014 року.',
-  'Офіцерський склад має високу кваліфікацію завдяки західним програмам підготовки.',
-  'Генерали ЗСУ відігравали ключову роль у стримуванні повномасштабної агресії у 2022 році.',
-  'Під час терміну генерала Родителева було створено перший дроновий батальйон.',
-  'При Мужилі була впроваджена нова логістична система постачання.'
-];
-
-const pastLeaders = [
-  {
-    nickname: 'Нікіта Родителев',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Хрест особливих заслуг', 'За зразкову службу', 'Залізний хрест', 'За сприяння війську'],
-    status: true,
-  },
-  {
-    nickname: 'Крістіан Родаріо',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Ветеран служби', 'Хрест особливих заслуг', 'За зразкову службу', 'Залізний хрест', 'Золотий тризуб', 'За мужність при виконанні спец. завдань', 'За сприяння війську'],
-    status: false,
-  },
-  {
-    nickname: 'Нікіта Лізейник',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Ветеран служби', 'За зразкову службу', 'Залізний хрест', 'Золотий тризуб', 'Хрест ССО'],
-    status: false,
-  },
-  {
-    nickname: 'Томас Фельдшер',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Цілком таємно'],
-    status: false,
-  },
-  {
-    nickname: 'Микита Гурцев',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Цілком таємно'],
-    status: false,
-  },
-  {
-    nickname: 'Дімон Іванович',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Цілком таємно'],
-    status: false,
-  },
-  {
-    nickname: 'Павло Дурнєв',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Цілком таємно'],
-    status: false,
-  },
-  {
-    nickname: 'Денис Медвідь',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Цілком таємно'],
-    status: false,
-  },
-  {
-    nickname: 'Віталій Керенський',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Цілком таємно'],
-    status: false,
-  },
-  {
-    nickname: 'Олександр Платонов',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Цілком таємно'],
-    status: false,
-  },
-  {
-    nickname: 'Вадим Адзусагава',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Цілком таємно'],
-    status: false,
-  },
-  {
-    nickname: 'Антон Шелбі',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Цілком таємно'],
-    status: false,
-  },
-  {
-    nickname: 'Владислав Дракула',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Ветеран служби', 'За зразкову службу', 'Золотий тризуб', 'Хрест ДШВ'],
-    status: false,
-  },
-  {
-    nickname: 'Алекс Македонський',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Цілком таємно'],
-    status: false,
-  },
-  {
-    nickname: 'Дмитро Федченко',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Ветеран служби', 'За зразкову службу', 'Золотий тризуб'],
-    status: false,
-  },
-  {
-    nickname: 'Андрій Колос',
-    avatar: require('../../assets/images/head_of_army.png'),
-    awards: ['Ветеран служби', 'За зразкову службу', 'Золотий тризуб'],
-    status: false,
-  },
-];
+import "./LeadershipHistorySection.scss";
 
 const LeadershipHistorySection = () => {
+  const [leaders, setLeaders] = useState([]);
+
+  useEffect(() => {
+    const q = query(collection(db, "hist-leaders"), orderBy("order"));
+    const unsub = onSnapshot(q, (snapshot) => {
+      setLeaders(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+    });
+
+    return () => unsub();
+  }, []);
+
   return (
-    <section className='leadership-history'>
+    <section className="leadership-history">
       <span>Історія керівництва</span>
-      <span className='description'>
-        Керівники Збройних Сил України залишили помітний слід в історії нашої армії. Кожен із них
-        вніс унікальний вклад у становлення та розвиток сучасного війська.
+      <span className="description">
+        Керівники Збройних Сил України залишили помітний слід в історії нашої армії.
       </span>
 
-      {/* <ul className='facts'>
-        {leadershipFacts.map((fact, i) => (
-          <li className="fact" key={i}>
-            <div className="icon-wrapper">
-              <BsPatchQuestion />
-            </div>
-            <span>{fact}</span>
-          </li>
-
-        ))}
-      </ul> */}
-
-      <div className='past-leaders'>
-        {pastLeaders.map((leader, i) => (
-          <div key={i} className={`leader-card ${leader.status ? 'actual' : ''}`}>
-            <img src={leader.avatar} alt={leader.nickname} />
-            <div className='nickname'>{leader.nickname}</div>
+      <div className="past-leaders">
+        {leaders.map((leader) => (
+          <div 
+            key={leader.id} 
+            className={`leader-card ${leader.status ? "actual" : ""}`}
+          >
+            <img 
+              src={require(`../../assets/images/${leader.avatar}`)} 
+              alt={leader.nickname} 
+            />
+            <div className="nickname">{leader.nickname}</div>
             {leader.awards?.length > 0 && (
-              <ul className='awards'>
+              <ul className="awards">
                 {leader.awards.map((award, j) => (
                   <li key={j}>{award}</li>
                 ))}
@@ -147,6 +46,6 @@ const LeadershipHistorySection = () => {
       </div>
     </section>
   );
-}
+};
 
 export default LeadershipHistorySection;
